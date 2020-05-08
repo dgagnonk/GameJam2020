@@ -12,11 +12,12 @@ onready var animation_player = $AnimationPlayer
 onready var shoot_timer = $ShootAnimation
 onready var gun = $Sprite/Gun
 
-onready var yVelocity = 1;
-
+onready var yVelocity = 1
+var selected
 
 func _ready():
-	# Static types are necessary here to avoid warnings.
+	selected = true
+	# Static types are necessary here to avoid warning
 	var camera: Camera2D = $Camera
 	if action_suffix == "_p1":
 		camera.custom_viewport = $"../.."
@@ -77,13 +78,18 @@ func _physics_process(_delta):
 
 
 func get_direction(_delta):
-	yVelocity = -1 if is_on_floor() and Input.is_action_just_pressed("jump" + action_suffix) else min(1,yVelocity+(_delta*2))
+	yVelocity = -1 if is_on_floor() and Input.is_action_just_pressed("jump" + action_suffix) and selected else min(1,yVelocity+(_delta*2))
 	
 	return Vector2(
-		Input.get_action_strength("move_right" + action_suffix) - Input.get_action_strength("move_left" + action_suffix),
+		Input.get_action_strength("move_right" + action_suffix) - Input.get_action_strength("move_left" + action_suffix) if selected else 0,
 		yVelocity
 	)
 
+func _input(event):
+	if event.is_action_released("switch_character"):
+		selected = !selected
+		if(selected):
+			get_node("Camera").current = true
 
 # This function calculates a new velocity whenever you need it.
 # It allows you to interrupt jumps.
