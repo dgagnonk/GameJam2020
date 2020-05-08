@@ -8,9 +8,44 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://src/Actors/Actor.gd"
+}, {
+"base": "Reference",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://src/Objects/Bullet.gd"
+}, {
+"base": "Reference",
+"class": "Coin",
+"language": "GDScript",
+"path": "res://src/Objects/Coin.gd"
+}, {
+"base": "Reference",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/Actors/Enemy.gd"
+}, {
+"base": "Reference",
+"class": "Gun",
+"language": "GDScript",
+"path": "res://src/Actors/Gun.gd"
+}, {
+"base": "Reference",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/Actors/Player.gd"
+} ]
 _global_script_class_icons={
-
+"Actor": "",
+"Bullet": "",
+"Coin": "",
+"Enemy": "",
+"Gun": "",
+"Player": ""
 }
 
 [application]
