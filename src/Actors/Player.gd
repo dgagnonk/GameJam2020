@@ -12,6 +12,8 @@ onready var animation_player = $AnimationPlayer
 onready var shoot_timer = $ShootAnimation
 onready var gun = $Sprite/Gun
 
+onready var yVelocity = 1;
+
 
 func _ready():
 	# Static types are necessary here to avoid warnings.
@@ -43,7 +45,7 @@ func _ready():
 # - If you split the character into a state machine or more advanced pattern,
 #   you can easily move individual functions.
 func _physics_process(_delta):
-	var direction = get_direction()
+	var direction = get_direction(_delta)
 
 	var is_jump_interrupted = Input.is_action_just_released("jump" + action_suffix) and _velocity.y < 0.0
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
@@ -74,10 +76,12 @@ func _physics_process(_delta):
 		animation_player.play(animation)
 
 
-func get_direction():
+func get_direction(_delta):
+	yVelocity = -1 if is_on_floor() and Input.is_action_just_pressed("jump" + action_suffix) else min(1,yVelocity+(_delta*2))
+	
 	return Vector2(
 		Input.get_action_strength("move_right" + action_suffix) - Input.get_action_strength("move_left" + action_suffix),
-		-1 if is_on_floor() and Input.is_action_just_pressed("jump" + action_suffix) else 0
+		yVelocity
 	)
 
 
