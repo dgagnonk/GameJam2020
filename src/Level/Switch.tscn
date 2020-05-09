@@ -7,7 +7,7 @@
 extents = Vector2( 7.8978, 9.0443 )
 
 [node name="Switch" type="Area2D"]
-scale = Vector2( 0.132267, 0.132267 )
+scale = Vector2( 0.0668954, 0.0668954 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

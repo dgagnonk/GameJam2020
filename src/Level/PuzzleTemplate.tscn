@@ -4,7 +4,7 @@
 [ext_resource path="res://src/Platforms/Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Actors/Player2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://birds_eye_camera.gd" type="Script" id=5]
+[ext_resource path="res://src/Level/birds_eye_camera.gd" type="Script" id=5]
 
 [node name="PuzzleTemplate" type="Node2D"]
 

@@ -37,7 +37,7 @@ scale = Vector2( 5.64, 1 )
 position = Vector2( 572.851, 152 )
 
 [node name="Box" parent="." instance=ExtResource( 4 )]
-position = Vector2( 342.829, 233.685 )
+position = Vector2( 486.279, 233.685 )
 
 [node name="Switch2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 577.673, 314.256 )
@@ -49,14 +49,14 @@ rotation = 1.57079
 scale = Vector2( 0.100113, 0.100113 )
 
 [node name="Box2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 388.448, 135.728 )
+position = Vector2( 341.898, 225.028 )
 
 [node name="BalloonBox" parent="." instance=ExtResource( 5 )]
-position = Vector2( 403.15, 212.177 )
+position = Vector2( 499.1, 129.527 )
 gravity_vector = Vector2( 1, 0 )
 
 [node name="BalloonBox2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 534.732, 263.634 )
+position = Vector2( 572.732, 246.534 )
 
 [node name="Goal" parent="." instance=ExtResource( 7 )]
 position = Vector2( 461.003, 166.751 )
