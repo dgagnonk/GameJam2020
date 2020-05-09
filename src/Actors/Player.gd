@@ -6,6 +6,7 @@ const FLOOR_DETECT_DISTANCE = 20.0
 
 export(String) var action_suffix = ""
 
+
 onready var platform_detector = $PlatformDetector
 onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
@@ -20,22 +21,22 @@ onready var switch_nearby = false
 
 
 func _ready():
-	
-	if selected:
-		get_node("Camera").current = true
+
+	#if selected:
+		#get_node("Camera").current = true
 	
 	rotate(-gravity_vector.angle_to(Vector2(0,1)))
 	
 	EventBus.connect("reverse_gravity", self, "on_reverse_gravity")
 	
 	# Static types are necessary here to avoid warning
-	var camera: Camera2D = $Camera
-	if action_suffix == "_p1":
-		camera.custom_viewport = $"../.."
-	elif action_suffix == "_p2":
-		var viewport: Viewport = $"../../../../ViewportContainer2/Viewport"
-		viewport.world_2d = ($"../.." as Viewport).world_2d
-		camera.custom_viewport = viewport
+	#var camera: Camera2D = $Camera
+	#if action_suffix == "_p1":
+	#	camera.custom_viewport = $"../.."
+	#elif action_suffix == "_p2":
+	##	var viewport: Viewport = $"../../../../ViewportContainer2/Viewport"
+	#	viewport.world_2d = ($"../.." as Viewport).world_2d
+	#	camera.custom_viewport = viewport
 
 
 func gravity_direction():
@@ -151,8 +152,8 @@ func get_direction(_delta):
 func _input(event):
 	if event.is_action_released("switch_character"):
 		selected = !selected
-		if(selected):
-			get_node("Camera").current = true
+		#if(selected):
+		#	get_node("Camera").current = true
 	
 	if selected:
 		if event.is_action_released("reverse_gravity") and switch_nearby:
