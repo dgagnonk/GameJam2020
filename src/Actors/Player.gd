@@ -27,6 +27,7 @@ func _ready():
 	rotate(-gravity_vector.angle_to(Vector2(0,1)))
 	
 	EventBus.connect("reverse_gravity", self, "on_reverse_gravity")
+	EventBus.connect("toggle_birds_eye", self, "on_toggle_birds_eye")
 	
 	# Static types are necessary here to avoid warning
 	var camera: Camera2D = $Camera
@@ -148,13 +149,23 @@ func get_direction(_delta):
 			-gravity_direction()*xVelocity
 		)
 
+func on_toggle_birds_eye(birds_eye_on):
+	if selected:
+		if !birds_eye_on:
+			$Camera.current = true
+
 func _input(event):
 	if event.is_action_released("switch_character"):
 		selected = !selected
 		if(selected):
 			get_node("Camera").current = true
+		
 	
 	if selected:
+		if event.is_action_pressed("birds_eye"):
+			EventBus.emit_signal("toggle_birds_eye", true)
+		if event.is_action_released("birds_eye"):
+			EventBus.emit_signal("toggle_birds_eye", false)
 		if event.is_action_released("reverse_gravity") and switch_nearby:
 			EventBus.emit_signal("reverse_gravity", gravity_opposite_orientation())
 

@@ -3,6 +3,7 @@ extends Node
 
 signal reverse_gravity(orientation)
 signal victory()
+signal toggle_birds_eye(toggle_on)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
