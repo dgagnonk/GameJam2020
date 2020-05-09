@@ -20,14 +20,22 @@ position = Vector2( 432.882, 472.365 )
 scale = Vector2( 6.68, 1 )
 
 [node name="Switch" parent="." instance=ExtResource( 2 )]
-position = Vector2( 213.121, 660.48 )
+position = Vector2( 207.952, 646.264 )
 rotation = -3.14159
 
 [node name="Switch2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1023.6, 314.137 )
+position = Vector2( 1035.23, 312.845 )
 rotation = -1.57079
 
 [node name="Goal" parent="." instance=ExtResource( 3 )]
-position = Vector2( 432.882, 542.688 )
+position = Vector2( 224.813, 550.442 )
 
 [node name="PuzzleTemplate" parent="." instance=ExtResource( 4 )]
+
+[node name="Goal2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 337.717, 689.374 )
+
+[node name="Platform" parent="." instance=ExtResource( 1 )]
+position = Vector2( 732.182, 717.213 )
+rotation = 1.57079
+scale = Vector2( 2.24, 1 )

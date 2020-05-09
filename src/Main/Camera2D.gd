@@ -17,6 +17,7 @@ export var constantSpeed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	EventBus.connect("toggle_birds_eye",self,"on_toggle_birds_eye")
 	anchor_mode = Camera2D.ANCHOR_MODE_DRAG_CENTER
 	current = true
 	var players = get_tree().get_nodes_in_group("players")
@@ -52,6 +53,11 @@ func _process(_delta):
 		rotation = lerp_angle(inactivePlayer.rotation, activePlayer.rotation, iterator)
 		#get_parent().position = endPos
 		#print(iterator)
+	
+	
+func on_toggle_birds_eye(birds_eye_on):
+		if !birds_eye_on:
+			current = true	
 	
 	
 func _input(event):

@@ -23,7 +23,7 @@ position = Vector2( 522.878, 963.508 )
 scale = Vector2( 1.8, 1 )
 
 [node name="Switch" parent="." instance=ExtResource( 3 )]
-position = Vector2( 73.0343, 989.466 )
+position = Vector2( 201.034, 989.466 )
 rotation = -3.14159
 
 [node name="Box" parent="." instance=ExtResource( 1 )]
@@ -70,3 +70,7 @@ scale = Vector2( 4.4, 1 )
 [node name="Switch2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1036.75, 612.939 )
 rotation = -1.57079
+
+[node name="Goal2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 63.0002, 1010 )
+scale = Vector2( 0.154695, 0.154695 )
