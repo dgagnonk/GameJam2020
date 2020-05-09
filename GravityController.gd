@@ -5,9 +5,15 @@ extends Area2D
 # var a = 2
 # var b = "text"
 
+func orient_parent(angle):
+	var parent = get_parent()
+	if parent.has_method("orient_to_gravity"):
+		parent.orient_to_gravity(angle)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	orient_parent(-gravity_vec.angle_to(Vector2(0,1)))
 	EventBus.connect("reverse_gravity", self, "on_reverse_gravity")
 
 func gravity_orientation():
@@ -17,7 +23,9 @@ func gravity_orientation():
 		return "horizontal"
 
 func set_gravity_direction(value):
+	orient_parent(-gravity_vec.angle_to(value))
 	gravity_vec = value
+	
 	get_parent().apply_impulse(Vector2(0,0),Vector2(0,0))
 
 func on_reverse_gravity(orientation):

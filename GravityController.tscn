@@ -6,7 +6,6 @@
 
 [node name="GravityController" type="Area2D"]
 space_override = 3
-gravity_vec = Vector2( 1, 0 )
 priority = 1.0
 script = ExtResource( 1 )
 
