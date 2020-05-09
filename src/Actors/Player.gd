@@ -6,6 +6,7 @@ const FLOOR_DETECT_DISTANCE = 20.0
 
 export(String) var action_suffix = ""
 
+
 onready var platform_detector = $PlatformDetector
 onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
@@ -20,9 +21,9 @@ onready var switch_nearby = false
 
 
 func _ready():
-	
-	if selected:
-		get_node("Camera").current = true
+
+	#if selected:
+		#get_node("Camera").current = true
 	
 	rotate(-gravity_vector.angle_to(Vector2(0,1)))
 	
@@ -30,13 +31,13 @@ func _ready():
 	EventBus.connect("toggle_birds_eye", self, "on_toggle_birds_eye")
 	
 	# Static types are necessary here to avoid warning
-	var camera: Camera2D = $Camera
-	if action_suffix == "_p1":
-		camera.custom_viewport = $"../.."
-	elif action_suffix == "_p2":
-		var viewport: Viewport = $"../../../../ViewportContainer2/Viewport"
-		viewport.world_2d = ($"../.." as Viewport).world_2d
-		camera.custom_viewport = viewport
+	#var camera: Camera2D = $Camera
+	#if action_suffix == "_p1":
+	#	camera.custom_viewport = $"../.."
+	#elif action_suffix == "_p2":
+	##	var viewport: Viewport = $"../../../../ViewportContainer2/Viewport"
+	#	viewport.world_2d = ($"../.." as Viewport).world_2d
+	#	camera.custom_viewport = viewport
 
 
 func gravity_direction():
@@ -102,7 +103,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("shoot" + action_suffix):
 		is_shooting = gun.shoot(sprite.scale.x)
 
-	var animation = get_new_animation(is_shooting)
+	var animation = get_new_animation()
 	if animation != animation_player.current_animation and shoot_timer.is_stopped():
 		if is_shooting:
 			shoot_timer.start()
@@ -157,9 +158,10 @@ func on_toggle_birds_eye(birds_eye_on):
 func _input(event):
 	if event.is_action_released("switch_character"):
 		selected = !selected
-		if(selected):
-			get_node("Camera").current = true
 		
+		#if(selected):
+		#	get_node("Camera").current = true
+
 	
 	if selected:
 		if event.is_action_pressed("birds_eye"):
@@ -195,7 +197,7 @@ func calculate_move_velocity(
 	return velocity
 
 
-func get_new_animation(is_shooting = false):
+func get_new_animation():
 	var animation_new = ""
 	if gravity_orientation() == "vertical":
 		if on_floor():

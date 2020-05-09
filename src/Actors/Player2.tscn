@@ -5,6 +5,5 @@
 [node name="Player2" type="Node2D"]
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1.21722, 9.71672 )
 selected = false
 gravity_vector = Vector2( 1, 0 )

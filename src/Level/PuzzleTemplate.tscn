@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Level/VictoryNotification.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Platforms/Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Actors/Player2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Level/birds_eye_camera.gd" type="Script" id=5]
+[ext_resource path="res://FluidCamera.tscn" type="PackedScene" id=6]
 
 [node name="PuzzleTemplate" type="Node2D"]
 
@@ -39,3 +40,5 @@ position = Vector2( 916.356, 855.628 )
 position = Vector2( 589.103, 513.577 )
 zoom = Vector2( 2, 2 )
 script = ExtResource( 5 )
+
+[node name="Camera Parent" parent="." instance=ExtResource( 6 )]
