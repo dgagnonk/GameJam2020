@@ -14,6 +14,7 @@ onready var gun = $Sprite/Gun
 
 onready var yVelocity = 1
 var selected
+onready var gravityDirection = 1
 
 func _ready():
 	selected = true
@@ -59,8 +60,10 @@ func _physics_process(_delta):
 
 	# When the character’s direction changes, we want to to scale the Sprite accordingly to flip it.
 	# This will make Robi face left or right depending on the direction you move.
-	if direction.x != 0:
-		sprite.scale.x = 1 if direction.x > 0 else -1
+	
+	var scaleX = get_sprite_scale(direction)
+	if(scaleX != null):
+		sprite.scale.x = scaleX
 
 	# We use the sprite's scale to store Robi’s look direction which allows us to shoot
 	# bullets forward.
@@ -76,13 +79,26 @@ func _physics_process(_delta):
 			shoot_timer.start()
 		animation_player.play(animation)
 
+func get_sprite_scale(direction):
+	if direction.x != 0:
+		return 1 if gravityDirection*direction.x > 0 else -1
+
+func on_floor():
+	if(gravityDirection == 1):
+		return is_on_floor()
+	else:
+		return is_on_ceiling()
+
+func reverseGravity():
+	gravityDirection = -gravityDirection
+	rotate(PI)
 
 func get_direction(_delta):
-	yVelocity = -1 if is_on_floor() and Input.is_action_just_pressed("jump" + action_suffix) and selected else min(1,yVelocity+(_delta*2))
+	yVelocity = -1 if on_floor() and Input.is_action_just_pressed("jump" + action_suffix) and selected else min(1,yVelocity+(_delta*2))
 	
 	return Vector2(
-		Input.get_action_strength("move_right" + action_suffix) - Input.get_action_strength("move_left" + action_suffix) if selected else 0,
-		yVelocity
+		gravityDirection*(Input.get_action_strength("move_right" + action_suffix) - Input.get_action_strength("move_left" + action_suffix)) if selected else 0,
+		gravityDirection*yVelocity
 	)
 
 func _input(event):
@@ -90,6 +106,8 @@ func _input(event):
 		selected = !selected
 		if(selected):
 			get_node("Camera").current = true
+	if event.is_action_released("reverse_gravity") and selected:
+		reverseGravity()
 
 # This function calculates a new velocity whenever you need it.
 # It allows you to interrupt jumps.
@@ -110,7 +128,7 @@ func calculate_move_velocity(
 
 func get_new_animation(is_shooting = false):
 	var animation_new = ""
-	if is_on_floor():
+	if on_floor():
 		animation_new = "run" if abs(_velocity.x) > 0.1 else "idle"
 	else:
 		animation_new = "falling" if _velocity.y > 0 else "jumping"
