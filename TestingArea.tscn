@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Platforms/Platform.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Ball.tscn" type="PackedScene" id=3]
+
+[ext_resource path="res://Player2.tscn" type="PackedScene" id=3]
+
+[ext_resource path="res://Box.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 467.428, 247.292 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 480.22, 349.932 )
@@ -24,9 +30,8 @@ position = Vector2( 465.78, 43.0825 )
 rotation = -3.14159
 scale = Vector2( 5.64, 1 )
 
-[node name="Ball" parent="." instance=ExtResource( 3 )]
-position = Vector2( 380.599, 141.19 )
+[node name="Player2" parent="." instance=ExtResource( 3 )]
 
-[node name="Ball2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 494.778, 141.19 )
-gravity_vector = Vector2( 0, 1 )
+[node name="Box" parent="." instance=ExtResource( 4 )]
+position = Vector2( 342.829, 233.685 )
+
