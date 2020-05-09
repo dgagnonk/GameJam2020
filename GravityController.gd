@@ -16,11 +16,13 @@ func gravity_orientation():
 	else:
 		return "horizontal"
 
+func set_gravity_direction(value):
+	gravity_vec = value
+	get_parent().apply_impulse(Vector2(0,0),Vector2(0,0))
 
 func on_reverse_gravity(orientation):
 	if orientation == gravity_orientation():
-		gravity_vec = -gravity_vec
-		get_parent().apply_impulse(Vector2(0,0),Vector2(0,0))
+		set_gravity_direction(-gravity_vec)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

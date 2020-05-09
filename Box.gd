@@ -1,20 +1,16 @@
 extends RigidBody2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export(Vector2) var gravity_vector
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$GravityController.set_gravity_direction(gravity_vector)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
-func _input(event):
-	if event.is_action_released("reverse_gravity"):
-		rotate(PI)
+

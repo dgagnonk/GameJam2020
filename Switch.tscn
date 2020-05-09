@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/art/lever.png" type="Texture" id=1]
+[ext_resource path="res://lever.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.8978, 9.0443 )
+
+[node name="Switch" type="Area2D"]
+scale = Vector2( 0.0561258, 0.0561258 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 28.9852, 28.9852 )
+shape = SubResource( 1 )
+
+[node name="lever" type="Sprite" parent="."]
+position = Vector2( 0.715637, 1.67204 )
+z_index = -1
+texture = ExtResource( 1 )

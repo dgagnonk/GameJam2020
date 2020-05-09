@@ -15,7 +15,7 @@ onready var gun = $Sprite/Gun
 onready var yVelocity = 1
 export(bool) var selected = true
 export(Vector2) var gravity_vector = Vector2(0,1)
-
+onready var switch_nearby = false
 
 
 func _ready():
@@ -48,6 +48,12 @@ func gravity_orientation():
 		return "vertical"
 	else:
 		return "horizontal"
+		
+func gravity_opposite_orientation():
+	if abs(gravity_vector.y) > 0:
+		return "horizontal"
+	else:
+		return "vertical"
 
 # Physics process is a built-in loop in Godot.
 # If you define _physics_process on a node, Godot will call it every frame.
@@ -140,8 +146,10 @@ func _input(event):
 		selected = !selected
 		if(selected):
 			get_node("Camera").current = true
-	if event.is_action_released("reverse_gravity") and selected:
-		EventBus.emit_signal("reverse_gravity", gravity_orientation())
+	
+	if selected:
+		if event.is_action_released("reverse_gravity") and switch_nearby:
+			EventBus.emit_signal("reverse_gravity", gravity_opposite_orientation())
 
 # This function calculates a new velocity whenever you need it.
 # It allows you to interrupt jumps.
