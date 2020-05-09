@@ -16,7 +16,7 @@
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 467.428, 247.292 )
 collision_layer = 9
-inventory = [ "blue_key" ]
+inventory = [ "red_key" ]
 
 [node name="Platform" parent="." instance=ExtResource( 8 )]
 position = Vector2( 480.22, 349.932 )
@@ -74,4 +74,3 @@ scale = Vector2( 0.147376, 0.147376 )
 position = Vector2( 420.175, 297.304 )
 scale = Vector2( 0.979094, -0.38863 )
 script = ExtResource( 10 )
-requires_item = "red_key"

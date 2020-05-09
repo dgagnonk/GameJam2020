@@ -11,12 +11,11 @@ func _ready():
 func on_body_entered(body):
 	if body is Player:
 		if requires_item in body.inventory:
-			print("Player has proper key")
+			body.nearest_interactable = get_parent()
 		else:
-			print("Does not have proper key")
-		
+			print("Player is in range of an interactable but has wrong item.")
+			
 func on_body_exited(body):
-	print("Player left object region")
-#	if body is Player:
-#		body.switch_nearby = false
+	if body is Player:
+		body.nearest_interactable = null
 	

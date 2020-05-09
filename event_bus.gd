@@ -3,6 +3,7 @@ extends Node
 
 signal reverse_gravity(orientation)
 signal victory()
+signal open_gate(gate_name)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

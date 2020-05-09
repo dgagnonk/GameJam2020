@@ -158,11 +158,17 @@ func _input(event):
 			get_node("Camera").current = true
 	
 	if selected:
-		if (event.is_action_released("reverse_gravity")
-			and nearest_interactable
-			and nearest_interactable.is_interactable):
-				EventBus.emit_signal(nearest_interactable.interact_action, gravity_opposite_orientation())
-
+		if event.is_action_released("interact"):
+			if (nearest_interactable
+				and nearest_interactable.is_interactable):
+					var interact_action_data
+					
+					if nearest_interactable.interact_action == "reverse_gravity":
+						interact_action_data = gravity_opposite_orientation()
+					elif nearest_interactable.interact_action == "open_gate":
+						interact_action_data = nearest_interactable.name
+					EventBus.emit_signal(nearest_interactable.interact_action, interact_action_data)
+				
 # This function calculates a new velocity whenever you need it.
 # It allows you to interrupt jumps.
 func calculate_move_velocity(

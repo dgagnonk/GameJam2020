@@ -6,21 +6,32 @@ onready var col_box = $CollisionShape2D
 
 onready var is_closed = true
 
-export(String) var requires_item = ""
+# item name required to interact with this object
+# interaction code for the gate is in InteractableArea.gd
+export(String) var requires_item = "red_key"
+
+# if set to false, "locks" the interactable - it won't be usable
 export(bool) var is_interactable = true
 
+# event name that gets sent to EventBus
+export(String) var interact_action = "open_gate"
+
 func _ready():
+	EventBus.connect("open_gate", self, "on_gate_open")
 	col_box.disabled = false
 
-func _input(event):
-	if event.is_action_released("test_key"):
-		if is_closed:
-			gate_closed.hide()
-			gate_open.show()
-		else:
-			gate_closed.show()
-			gate_open.hide()
-	
-		is_closed = !is_closed
-		col_box.disabled = !is_closed
-	
+func toggleGateOpen():
+	if is_closed:
+		gate_closed.hide()
+		gate_open.show()
+	else:
+		gate_closed.show()
+		gate_open.hide()
+
+	is_closed = !is_closed
+	col_box.disabled = !is_closed	
+
+func on_gate_open(gate_name):
+	toggleGateOpen()
+
+
