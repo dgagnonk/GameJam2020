@@ -25,6 +25,7 @@ func _ready():
 	
 	rotate(-gravity_vector.angle_to(Vector2(0,1)))
 	
+	EventBus.connect("reverse_gravity", self, "on_reverse_gravity")
 	
 	# Static types are necessary here to avoid warning
 	var camera: Camera2D = $Camera
@@ -116,13 +117,13 @@ func on_floor():
 	else:
 		return is_on_wall()
 
-func reverseGravity():
-	gravity_vector = -gravity_vector
-	rotate(PI)
+func on_reverse_gravity(orientation):
+	if orientation == gravity_orientation():
+		gravity_vector = -gravity_vector
+		rotate(PI)
 
 func get_direction(_delta):
 	yVelocity = -1 if on_floor() and Input.is_action_just_pressed("jump" + action_suffix) and selected else min(1,yVelocity+(_delta*2))
-	
 	if gravity_orientation() == "vertical":
 		return Vector2(
 			gravity_direction()*(Input.get_action_strength("move_right" + action_suffix) - Input.get_action_strength("move_left" + action_suffix)) if selected else 0,
@@ -140,7 +141,7 @@ func _input(event):
 		if(selected):
 			get_node("Camera").current = true
 	if event.is_action_released("reverse_gravity") and selected:
-		reverseGravity()
+		EventBus.emit_signal("reverse_gravity", gravity_orientation())
 
 # This function calculates a new velocity whenever you need it.
 # It allows you to interrupt jumps.

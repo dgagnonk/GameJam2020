@@ -54,6 +54,10 @@ config/name="Game Jam 2020"
 run/main_scene="res://TestingArea.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+EventBus="*res://event_bus.gd"
+
 [input]
 
 ui_left={
