@@ -4,20 +4,20 @@
 [ext_resource path="res://assets/art/portal.png" type="Texture" id=2]
 [ext_resource path="res://src/Level/Goal.gd" type="Script" id=3]
 
-
 [sub_resource type="CircleShape2D" id=1]
-radius = 222.576
+radius = 130.0
 
 [node name="Goal" type="Area2D"]
-position = Vector2( 0.183487, 1.2626 )
+position = Vector2( -0.0672034, 0.071828 )
 scale = Vector2( 0.310129, 0.310129 )
 script = ExtResource( 3 )
 
 [node name="portal" type="Sprite" parent="."]
-position = Vector2( -2.63721, 2.81396 )
+position = Vector2( 0.191986, -0.0151978 )
+scale = Vector2( 0.521248, 0.521248 )
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -5.52832, 0.000244141 )
+position = Vector2( -0.072052, 0.000247955 )
 shape = SubResource( 1 )
