@@ -8,6 +8,7 @@ export(String) var action_suffix = ""
 
 
 onready var platform_detector = $PlatformDetector
+onready var interactable_detector = $InteractableDetector
 onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
 onready var shoot_timer = $ShootAnimation
@@ -19,6 +20,8 @@ export(bool) var selected = true
 export(Vector2) var gravity_vector = Vector2(0,1)
 onready var switch_nearby = false
 
+onready var nearest_interactable = null
+export(Array) var inventory = []
 
 func _ready():
 
@@ -163,9 +166,17 @@ func _input(event):
 			EventBus.emit_signal("toggle_birds_eye", true)
 		if event.is_action_released("birds_eye"):
 			EventBus.emit_signal("toggle_birds_eye", false)
-		if event.is_action_released("reverse_gravity") and switch_nearby:
-			EventBus.emit_signal("reverse_gravity", gravity_opposite_orientation())
-
+		if event.is_action_released("interact"):
+			if (nearest_interactable
+				and nearest_interactable.is_interactable):
+					var interact_action_data
+					
+					if nearest_interactable.interact_action == "reverse_gravity":
+						interact_action_data = gravity_opposite_orientation()
+					elif nearest_interactable.interact_action == "open_gate":
+						interact_action_data = nearest_interactable.name
+					EventBus.emit_signal(nearest_interactable.interact_action, interact_action_data)
+				
 # This function calculates a new velocity whenever you need it.
 # It allows you to interrupt jumps.
 func calculate_move_velocity(
