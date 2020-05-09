@@ -15,6 +15,8 @@
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 467.428, 247.292 )
+collision_layer = 9
+inventory = [ "blue_key" ]
 
 [node name="Platform" parent="." instance=ExtResource( 8 )]
 position = Vector2( 480.22, 349.932 )
@@ -49,6 +51,8 @@ scale = Vector2( 0.0913514, 0.0913514 )
 position = Vector2( 248.882, 120.3 )
 rotation = 1.57079
 scale = Vector2( 0.100113, 0.100113 )
+collision_layer = 9
+collision_mask = 9
 
 [node name="Box2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 388.448, 135.728 )
@@ -67,6 +71,7 @@ scale = Vector2( 0.147376, 0.147376 )
 [node name="VictoryNotifier" parent="." instance=ExtResource( 1 )]
 
 [node name="Gate" parent="." instance=ExtResource( 9 )]
-position = Vector2( 268.011, 308.33 )
+position = Vector2( 420.175, 297.304 )
 scale = Vector2( 0.979094, -0.38863 )
 script = ExtResource( 10 )
+requires_item = "red_key"

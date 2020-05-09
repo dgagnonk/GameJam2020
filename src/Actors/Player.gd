@@ -7,6 +7,7 @@ const FLOOR_DETECT_DISTANCE = 20.0
 export(String) var action_suffix = ""
 
 onready var platform_detector = $PlatformDetector
+onready var interactable_detector = $InteractableDetector
 onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
 onready var shoot_timer = $ShootAnimation
@@ -18,6 +19,8 @@ export(bool) var selected = true
 export(Vector2) var gravity_vector = Vector2(0,1)
 onready var switch_nearby = false
 
+onready var nearest_interactable = null
+export(Array) var inventory = []
 
 func _ready():
 	
@@ -155,8 +158,10 @@ func _input(event):
 			get_node("Camera").current = true
 	
 	if selected:
-		if event.is_action_released("reverse_gravity") and switch_nearby:
-			EventBus.emit_signal("reverse_gravity", gravity_opposite_orientation())
+		if (event.is_action_released("reverse_gravity")
+			and nearest_interactable
+			and nearest_interactable.is_interactable):
+				EventBus.emit_signal(nearest_interactable.interact_action, gravity_opposite_orientation())
 
 # This function calculates a new velocity whenever you need it.
 # It allows you to interrupt jumps.

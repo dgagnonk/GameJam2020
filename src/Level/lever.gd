@@ -5,6 +5,8 @@ extends Area2D
 # var a = 2
 # var b = "text"
 
+export(bool) var is_interactable = true
+export(String) var interact_action = "reverse_gravity"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,11 +15,11 @@ func _ready():
 	
 func on_body_entered(body):
 	if body is Player:
-		body.switch_nearby = true
+		body.nearest_interactable = self
 		
 func on_body_exited(body):
 	if body is Player:
-		body.switch_nearby = false
+		body.nearest_interactable = null
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
