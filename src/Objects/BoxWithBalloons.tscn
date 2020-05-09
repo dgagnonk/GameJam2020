@@ -11,7 +11,7 @@ absorbent = true
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 40, 40 )
 
-[node name="BalloonBox" type="RigidBody2D"]
+[node name="BalloonBoxBody" type="RigidBody2D"]
 collision_layer = 9
 collision_mask = 9
 mode = 2
@@ -48,5 +48,29 @@ texture = ExtResource( 4 )
 
 [node name="balloon4" type="Sprite" parent="."]
 position = Vector2( 33.5514, -47.888 )
+scale = Vector2( 0.0580409, 0.0580409 )
+texture = ExtResource( 4 )
+
+[node name="balloon8" type="Sprite" parent="."]
+position = Vector2( -31.2422, 46.6552 )
+rotation = -3.14159
+scale = Vector2( 0.0567554, 0.0567554 )
+texture = ExtResource( 4 )
+
+[node name="balloon7" type="Sprite" parent="."]
+position = Vector2( -11.082, 47.9206 )
+rotation = -3.14159
+scale = Vector2( 0.0586837, 0.0586837 )
+texture = ExtResource( 4 )
+
+[node name="balloon6" type="Sprite" parent="."]
+position = Vector2( 10.7493, 46.2948 )
+rotation = -3.14159
+scale = Vector2( 0.0599692, 0.0599692 )
+texture = ExtResource( 4 )
+
+[node name="balloon5" type="Sprite" parent="."]
+position = Vector2( 34.2498, 48.4825 )
+rotation = -3.14159
 scale = Vector2( 0.0580409, 0.0580409 )
 texture = ExtResource( 4 )
