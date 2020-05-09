@@ -19,7 +19,7 @@ position = Vector2( 188.001, 965.249 )
 scale = Vector2( 3.56, 1 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
-position = Vector2( 519.878, 963.508 )
+position = Vector2( 522.878, 963.508 )
 scale = Vector2( 1.8, 1 )
 
 [node name="Switch" parent="." instance=ExtResource( 3 )]
@@ -30,7 +30,7 @@ rotation = -3.14159
 position = Vector2( 395.228, 1002.35 )
 
 [node name="Platform2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 445.573, 864.809 )
+position = Vector2( 443.573, 864.809 )
 scale = Vector2( 9, 1 )
 
 [node name="Platform3" parent="." instance=ExtResource( 2 )]
@@ -63,7 +63,7 @@ position = Vector2( 86.2987, 795.698 )
 gravity_vector = Vector2( 1, 0 )
 
 [node name="Platform9" parent="." instance=ExtResource( 2 )]
-position = Vector2( 845.094, 514.133 )
+position = Vector2( 848.094, 514.133 )
 rotation = 1.57079
 scale = Vector2( 4.4, 1 )
 
