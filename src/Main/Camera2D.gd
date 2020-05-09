@@ -1,8 +1,8 @@
 extends Camera2D
 var activePlayer: Player
 var inactivePlayer: Player
-export var movementSpeed = 1
-export var movementTime = 2
+export var movementSpeed = 2
+export var movementTime = 0.5
 var startPos
 var endPos
 var globalClock = 0
