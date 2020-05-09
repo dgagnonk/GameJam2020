@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/art/lever.png" type="Texture" id=1]
-[ext_resource path="res://lever.gd" type="Script" id=2]
+[ext_resource path="res://src/Level/lever.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.8978, 9.0443 )
 
 [node name="Switch" type="Area2D"]
-scale = Vector2( 0.0561258, 0.0561258 )
+scale = Vector2( 0.132267, 0.132267 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -13,6 +13,7 @@ onready var shoot_timer = $ShootAnimation
 onready var gun = $Sprite/Gun
 
 onready var yVelocity = 1
+onready var xVelocity = 0
 export(bool) var selected = true
 export(Vector2) var gravity_vector = Vector2(0,1)
 onready var switch_nearby = false
@@ -130,15 +131,21 @@ func on_reverse_gravity(orientation):
 
 func get_direction(_delta):
 	yVelocity = -1 if on_floor() and Input.is_action_just_pressed("jump" + action_suffix) and selected else min(1,yVelocity+(_delta*2))
+	
+	if on_floor():
+		xVelocity = (Input.get_action_strength("move_right" + action_suffix) - Input.get_action_strength("move_left" + action_suffix)) if selected and on_floor() else 0
+	else:
+		xVelocity = xVelocity*(1-_delta)
+	
 	if gravity_orientation() == "vertical":
 		return Vector2(
-			gravity_direction()*(Input.get_action_strength("move_right" + action_suffix) - Input.get_action_strength("move_left" + action_suffix)) if selected else 0,
+			gravity_direction()*xVelocity,
 			gravity_direction()*yVelocity
 		)
 	else:
 		return Vector2(
 			gravity_direction()*yVelocity,
-			gravity_direction()*(-Input.get_action_strength("move_right" + action_suffix) + Input.get_action_strength("move_left" + action_suffix)) if selected else 0
+			-gravity_direction()*xVelocity
 		)
 
 func _input(event):
