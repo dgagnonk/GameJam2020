@@ -1,0 +1,18 @@
+ADDING A NEW GATE:
+- Object is src -> Level -> Gate.gd
+- Open the scene and change the sprite textures to whatever your gate is
+- Make sure the gate's name in the main scene is unique (e.g. red gates should be "red_gate", blue gates should be "blue_gate", etc)
+- In the inspector, make sure "Is Interactable" is on
+- Make the "interact action" set to "open_gate"
+- If you don't need an item to open the gate, don't put anything in "Requires Item". Otherwise, put in the name of the item on the map that is needed to open the gate. E.g. "red_key" would correspond to "red_gate"
+
+ADDING A NEW KEY:
+- Object is src -> Objects -> InventoryItem.gd
+- Change sprite in the scene to match your item
+- Name the item according to your gate's "requires item" field (e.g. "red_key")
+
+ADDING A NEW BUTTON:
+- Object is src -> Objects -> TriggerButton.gd
+- Change sprites as needed (on/off)
+- In inspector, enter event that propagates through EventBus when button is on, e.g. "open_gate"
+- In inspector, enter event data needed for the entered event. E.g. for open_gate, you need to put in the gate name, so that would be "red_gate" to open red gates when the button is on

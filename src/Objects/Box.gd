@@ -2,7 +2,7 @@ extends RigidBody2D
 
 
 export(Vector2) var gravity_vector
-
+onready var can_use_buttons = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

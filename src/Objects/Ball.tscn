@@ -4,10 +4,11 @@
 [ext_resource path="res://assets/art/ball.png" type="Texture" id=2]
 [ext_resource path="res://src/Objects/Ball.gd" type="Script" id=3]
 
-[sub_resource type="PhysicsMaterial" id=2]
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 10.0
 rough = true
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=2]
 radius = 40.0
 
 [node name="Ball" type="RigidBody2D" groups=[
@@ -16,17 +17,18 @@ radius = 40.0
 collision_layer = 8
 collision_mask = 9
 mass = 1.65918
-physics_material_override = SubResource( 2 )
+physics_material_override = SubResource( 1 )
 gravity_scale = 4.0
 contacts_reported = 3
 contact_monitor = true
-linear_damp = 0.0
-angular_damp = 0.0
+linear_damp = 2.0
+angular_damp = 2.0
 script = ExtResource( 3 )
 gravity_vector = Vector2( 0, 1 )
+can_use_buttons = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="ball" type="Sprite" parent="."]
 position = Vector2( 0.270203, -0.157578 )

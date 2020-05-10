@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://src/Actors/Actor.gd"
 }, {
 "base": "RigidBody2D",
+"class": "Ball",
+"language": "GDScript",
+"path": "res://src/Objects/Ball.gd"
+}, {
+"base": "RigidBody2D",
 "class": "Bullet",
 "language": "GDScript",
 "path": "res://src/Objects/Bullet.gd"
@@ -38,14 +43,21 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/Actors/Player.gd"
+}, {
+"base": "Area2D",
+"class": "TriggerButton",
+"language": "GDScript",
+"path": "res://src/Objects/TriggerButton.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
+"Ball": "",
 "Bullet": "",
 "Coin": "",
 "Enemy": "",
 "Gun": "",
-"Player": ""
+"Player": "",
+"TriggerButton": ""
 }
 
 [application]

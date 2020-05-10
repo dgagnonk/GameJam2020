@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/art/gate open.png" type="Texture" id=1]
 [ext_resource path="res://src/Level/InteractableArea.gd" type="Script" id=2]
 [ext_resource path="res://assets/art/gate closed.png" type="Texture" id=3]
+[ext_resource path="res://src/Level/Gate.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33.6945, 17.7873 )
 
 [node name="Gate" type="KinematicBody2D"]
-position = Vector2( 268.011, 318.33 )
+position = Vector2( -1.19983, 0.432098 )
 rotation = -1.5708
-scale = Vector2( 3.05909, -1.54863 )
+scale = Vector2( 1.53909, -0.388631 )
+script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.0174484, -0.365962 )
