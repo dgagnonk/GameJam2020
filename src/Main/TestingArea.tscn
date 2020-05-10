@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Level/PuzzleTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Objects/InventoryItem.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/Level/Goal.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Ball.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Level/Gate.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Level/Background.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Node2D"]
 
@@ -54,3 +55,7 @@ position = Vector2( 310.069, 888.456 )
 
 [node name="Gate" parent="." instance=ExtResource( 9 )]
 position = Vector2( 464.267, 990.521 )
+
+[node name="Background" parent="." instance=ExtResource( 10 )]
+position = Vector2( 541.526, 548.211 )
+scale = Vector2( 1.00692, 1.53276 )
