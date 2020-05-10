@@ -105,9 +105,15 @@ func _physics_process(_delta):
 	var animation = get_new_animation()
 	
 	if gravity_orientation() == "vertical":
-		animations.flip_h = direction.x < 0
+		if gravity_direction() > 0:
+			animations.flip_h = direction.x < 0
+		else:
+			animations.flip_h = direction.x > 0
 	else:
-		animations.flip_h = direction.y > 0
+		if gravity_direction() > 0:
+			animations.flip_h = direction.y > 0
+		else:
+			animations.flip_h = direction.y < 0
 		
 	animations.play(animation)
 
