@@ -184,7 +184,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 10, 14 )
+extents = Vector2( 10.5472, 14.9367 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "players",
@@ -243,6 +243,7 @@ current = true
 process_mode = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -3.67545, 3.67543 )
 shape = SubResource( 11 )
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]

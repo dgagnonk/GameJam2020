@@ -14,7 +14,7 @@ export(String) var requires_item = "red_key"
 export(bool) var is_interactable = true
 
 # event name that gets sent to EventBus
-export(String) var interact_action = "open_gate"
+export(String) var interact_action = "toggle_gate_open"
 
 func _ready():
 	EventBus.connect("toggle_gate_open", self, "on_gate_toggle")
