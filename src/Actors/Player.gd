@@ -13,6 +13,7 @@ onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
 onready var shoot_timer = $ShootAnimation
 onready var gun = $Sprite/Gun
+onready var animations = $Animations
 
 onready var yVelocity = 1
 onready var xVelocity = 0
@@ -103,8 +104,12 @@ func _physics_process(_delta):
 
 	var animation = get_new_animation()
 	
-	animation_player.play(animation)
-
+	if gravity_orientation() == "vertical":
+		animations.flip_h = direction.x < 0
+	else:
+		animations.flip_h = direction.y > 0
+		
+	animations.play(animation)
 
 func get_sprite_scale(direction):
 	if gravity_orientation() == "vertical":
