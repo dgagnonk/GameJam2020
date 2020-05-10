@@ -89,27 +89,22 @@ func _physics_process(_delta):
 	_velocity = move_and_slide_with_snap(
 		_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false
 	)
+	var push = 100
+	# after calling move_and_slide()
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if collision.collider.is_in_group("balls"):
+			collision.collider.apply_central_impulse(-collision.normal * push)
 
-	# When the character’s direction changes, we want to to scale the Sprite accordingly to flip it.
-	# This will make Robi face left or right depending on the direction you move.
-	
+	# When the character’s direction changes, we want to to scale the Sprite accordingly to flip it
 	var scaleX = get_sprite_scale(direction)
 	if(scaleX != null):
 		sprite.scale.x = scaleX
 
-	# We use the sprite's scale to store Robi’s look direction which allows us to shoot
-	# bullets forward.
-	# There are many situations like these where you can reuse existing properties instead of
-	# creating new variables.
-	var is_shooting = false
-	if Input.is_action_just_pressed("shoot" + action_suffix):
-		is_shooting = gun.shoot(sprite.scale.x)
-
 	var animation = get_new_animation()
-	if animation != animation_player.current_animation and shoot_timer.is_stopped():
-		if is_shooting:
-			shoot_timer.start()
-		animation_player.play(animation)
+	
+	animation_player.play(animation)
+
 
 func get_sprite_scale(direction):
 	if gravity_orientation() == "vertical":
