@@ -43,13 +43,15 @@ position = Vector2( 250.043, 691.601 )
 position = Vector2( 893.329, 1019.71 )
 
 [node name="Red Button" parent="." instance=ExtResource( 3 )]
-position = Vector2( 713.524, 1042.58 )
+position = Vector2( 746.685, 1042.58 )
 scale = Vector2( 0.28, 0.2 )
 trigger_event = "open_gate"
 trigger_event_data = "red_gate"
 
 [node name="Box" parent="." instance=ExtResource( 4 )]
-position = Vector2( 948.05, 981.284 )
+position = Vector2( 310.069, 888.456 )
 
 [node name="Gate" parent="." instance=ExtResource( 9 )]
-position = Vector2( 855.98, 992.849 )
+position = Vector2( 558.648, 984.969 )
+collision_layer = 0
+collision_mask = 1

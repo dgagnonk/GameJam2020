@@ -18,7 +18,6 @@ export(String) var interact_action = "open_gate"
 
 func _ready():
 	EventBus.connect("open_gate", self, "on_gate_open")
-	col_box.disabled = false
 
 func toggleGateOpen():
 	if is_closed:
@@ -29,7 +28,7 @@ func toggleGateOpen():
 		gate_open.hide()
 
 	is_closed = !is_closed
-	col_box.disabled = !is_closed	
+	set_collision_mask_bit(0, is_closed)
 
 func on_gate_open(gate_name):
 	toggleGateOpen()

@@ -31,7 +31,7 @@ scale = Vector2( 11.24, 1 )
 [node name="VictoryNotifier" parent="." instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 826.694, 973.42 )
+position = Vector2( 700.112, 976.936 )
 inventory = [  ]
 
 [node name="Player2" parent="." instance=ExtResource( 4 )]
