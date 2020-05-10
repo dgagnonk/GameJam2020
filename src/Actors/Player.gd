@@ -22,6 +22,7 @@ onready var switch_nearby = false
 
 onready var nearest_interactable = null
 export(Array) var inventory = []
+onready var can_use_buttons = true
 
 func _ready():
 
