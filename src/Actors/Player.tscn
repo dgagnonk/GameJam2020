@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=103 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/player/robot_demo.png" type="Texture" id=2]
@@ -9,182 +9,118 @@
 [ext_resource path="res://assets/art/ui/touch_button_jump.png" type="Texture" id=7]
 [ext_resource path="res://assets/art/ui/touch_button_fire.png" type="Texture" id=8]
 [ext_resource path="res://src/Actors/Gun.gd" type="Script" id=9]
+[ext_resource path="res://assets/art/player/Idle/0035.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/player/Idle/0003.png" type="Texture" id=11]
+[ext_resource path="res://assets/art/player/Idle/0006.png" type="Texture" id=12]
+[ext_resource path="res://assets/art/player/Idle/0008.png" type="Texture" id=13]
+[ext_resource path="res://assets/art/player/Idle/0010.png" type="Texture" id=14]
+[ext_resource path="res://assets/art/player/Idle/0018.png" type="Texture" id=15]
+[ext_resource path="res://assets/art/player/Idle/0023.png" type="Texture" id=16]
+[ext_resource path="res://assets/art/player/Idle/0024.png" type="Texture" id=17]
+[ext_resource path="res://assets/art/player/Idle/0021.png" type="Texture" id=18]
+[ext_resource path="res://assets/art/player/Idle/0012.png" type="Texture" id=19]
+[ext_resource path="res://assets/art/player/Idle/0007.png" type="Texture" id=20]
+[ext_resource path="res://assets/art/player/Idle/0028.png" type="Texture" id=21]
+[ext_resource path="res://assets/art/player/Idle/0025.png" type="Texture" id=22]
+[ext_resource path="res://assets/art/player/Idle/0027.png" type="Texture" id=23]
+[ext_resource path="res://assets/art/player/Idle/0014.png" type="Texture" id=24]
+[ext_resource path="res://assets/art/player/Idle/0016.png" type="Texture" id=25]
+[ext_resource path="res://assets/art/player/Idle/0009.png" type="Texture" id=26]
+[ext_resource path="res://assets/art/player/Idle/0031.png" type="Texture" id=27]
+[ext_resource path="res://assets/art/player/Idle/0002.png" type="Texture" id=28]
+[ext_resource path="res://assets/art/player/Idle/0015.png" type="Texture" id=29]
+[ext_resource path="res://assets/art/player/Idle/0019.png" type="Texture" id=30]
+[ext_resource path="res://assets/art/player/Idle/0022.png" type="Texture" id=31]
+[ext_resource path="res://assets/art/player/Idle/0026.png" type="Texture" id=32]
+[ext_resource path="res://assets/art/player/Idle/0029.png" type="Texture" id=33]
+[ext_resource path="res://assets/art/player/Idle/0030.png" type="Texture" id=34]
+[ext_resource path="res://assets/art/player/Idle/0032.png" type="Texture" id=35]
+[ext_resource path="res://assets/art/player/Idle/0017.png" type="Texture" id=36]
+[ext_resource path="res://assets/art/player/Idle/0011.png" type="Texture" id=37]
+[ext_resource path="res://assets/art/player/Idle/0005.png" type="Texture" id=38]
+[ext_resource path="res://assets/art/player/Idle/0013.png" type="Texture" id=39]
+[ext_resource path="res://assets/art/player/Idle/0004.png" type="Texture" id=40]
+[ext_resource path="res://assets/art/player/Idle/0020.png" type="Texture" id=41]
+[ext_resource path="res://assets/art/player/Idle/0033.png" type="Texture" id=42]
+[ext_resource path="res://assets/art/player/Idle/0034.png" type="Texture" id=43]
+[ext_resource path="res://assets/art/player/Idle/0001.png" type="Texture" id=44]
+[ext_resource path="res://assets/art/player/Idle/0040.png" type="Texture" id=45]
+[ext_resource path="res://assets/art/player/Idle/0036.png" type="Texture" id=46]
+[ext_resource path="res://assets/art/player/Idle/0037.png" type="Texture" id=47]
+[ext_resource path="res://assets/art/player/Idle/0038.png" type="Texture" id=48]
+[ext_resource path="res://assets/art/player/Idle/0039.png" type="Texture" id=49]
+[ext_resource path="res://assets/art/player/run cycle/0001.png" type="Texture" id=50]
+[ext_resource path="res://assets/art/player/run cycle/0000.png" type="Texture" id=51]
+[ext_resource path="res://assets/art/player/run cycle/0002.png" type="Texture" id=52]
+[ext_resource path="res://assets/art/player/run cycle/0010.png" type="Texture" id=53]
+[ext_resource path="res://assets/art/player/run cycle/0008.png" type="Texture" id=54]
+[ext_resource path="res://assets/art/player/run cycle/0011.png" type="Texture" id=55]
+[ext_resource path="res://assets/art/player/run cycle/0004.png" type="Texture" id=56]
+[ext_resource path="res://assets/art/player/run cycle/0013.png" type="Texture" id=57]
+[ext_resource path="res://assets/art/player/run cycle/0003.png" type="Texture" id=58]
+[ext_resource path="res://assets/art/player/run cycle/0014.png" type="Texture" id=59]
+[ext_resource path="res://assets/art/player/run cycle/0007.png" type="Texture" id=60]
+[ext_resource path="res://assets/art/player/run cycle/0009.png" type="Texture" id=61]
+[ext_resource path="res://assets/art/player/run cycle/0005.png" type="Texture" id=62]
+[ext_resource path="res://assets/art/player/run cycle/0012.png" type="Texture" id=63]
+[ext_resource path="res://assets/art/player/run cycle/0015.png" type="Texture" id=64]
+[ext_resource path="res://assets/art/player/run cycle/0006.png" type="Texture" id=65]
+[ext_resource path="res://assets/art/player/jump/0025.png" type="Texture" id=89]
+[ext_resource path="res://assets/art/player/jump/0026.png" type="Texture" id=90]
+[ext_resource path="res://assets/art/player/jump/0024.png" type="Texture" id=91]
+[ext_resource path="res://assets/art/player/jump/0017.png" type="Texture" id=92]
+[ext_resource path="res://assets/art/player/jump/0001.png" type="Texture" id=93]
+[ext_resource path="res://assets/art/player/jump/0010.png" type="Texture" id=94]
+[ext_resource path="res://assets/art/player/jump/0004.png" type="Texture" id=95]
+[ext_resource path="res://assets/art/player/jump/0006.png" type="Texture" id=96]
+[ext_resource path="res://assets/art/player/jump/0005.png" type="Texture" id=97]
+[ext_resource path="res://assets/art/player/jump/0002.png" type="Texture" id=98]
+[ext_resource path="res://assets/art/player/jump/0007.png" type="Texture" id=99]
+[ext_resource path="res://assets/art/player/jump/0003.png" type="Texture" id=100]
+[ext_resource path="res://assets/art/player/jump/0008.png" type="Texture" id=101]
+[ext_resource path="res://assets/art/player/jump/0009.png" type="Texture" id=102]
+[ext_resource path="res://assets/art/player/jump/0015.png" type="Texture" id=103]
+[ext_resource path="res://assets/art/player/jump/0016.png" type="Texture" id=104]
+[ext_resource path="res://assets/art/player/jump/0013.png" type="Texture" id=105]
+[ext_resource path="res://assets/art/player/jump/0014.png" type="Texture" id=106]
+[ext_resource path="res://assets/art/player/jump/0012.png" type="Texture" id=107]
+[ext_resource path="res://assets/art/player/jump/0011.png" type="Texture" id=108]
+[ext_resource path="res://assets/art/player/jump/0022.png" type="Texture" id=109]
+[ext_resource path="res://assets/art/player/jump/0023.png" type="Texture" id=110]
+[ext_resource path="res://assets/art/player/jump/0018.png" type="Texture" id=111]
+[ext_resource path="res://assets/art/player/jump/0020.png" type="Texture" id=112]
+[ext_resource path="res://assets/art/player/jump/0021.png" type="Texture" id=113]
+[ext_resource path="res://assets/art/player/jump/0019.png" type="Texture" id=114]
+[ext_resource path="res://assets/art/player/jump/0027.png" type="Texture" id=115]
+[ext_resource path="res://assets/art/player/jump/0030.png" type="Texture" id=116]
+[ext_resource path="res://assets/art/player/jump/0028.png" type="Texture" id=117]
+[ext_resource path="res://assets/art/player/jump/0035.png" type="Texture" id=118]
+[ext_resource path="res://assets/art/player/jump/0031.png" type="Texture" id=119]
+[ext_resource path="res://assets/art/player/jump/0033.png" type="Texture" id=120]
+[ext_resource path="res://assets/art/player/jump/0034.png" type="Texture" id=121]
+[ext_resource path="res://assets/art/player/jump/0032.png" type="Texture" id=122]
+[ext_resource path="res://assets/art/player/jump/0029.png" type="Texture" id=123]
 
-[sub_resource type="Animation" id=1]
-resource_name = "crouch"
-length = 0.01
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 22 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "falling"
-length = 0.01
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 21 ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "falling_weapon"
-length = 0.5
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 26 ]
-}
-
-[sub_resource type="Animation" id=4]
-length = 7.0
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.25, 1.5, 2, 4.5, 4.75, 5, 5.25 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 16, 17, 18, 16, 19, 20, 19, 16 ]
-}
-
-[sub_resource type="Animation" id=5]
-length = 0.5
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 25 ]
-}
-
-[sub_resource type="Animation" id=6]
-length = 0.5
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 23, 24, 23 ]
-}
-
-[sub_resource type="Animation" id=7]
-length = 0.5
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 26 ]
-}
-
-[sub_resource type="Animation" id=8]
-length = 1.25
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 0 ]
-}
-
-[sub_resource type="Animation" id=9]
-length = 1.25
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 5, 6, 7, 8, 9, 5 ]
-}
-
-[sub_resource type="Animation" id=10]
-length = 1.25
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 10, 11, 12, 13, 14, 5 ]
-}
-
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.5472, 14.9367 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 44 ), ExtResource( 28 ), ExtResource( 11 ), ExtResource( 40 ), ExtResource( 38 ), ExtResource( 12 ), ExtResource( 20 ), ExtResource( 13 ), ExtResource( 26 ), ExtResource( 14 ), ExtResource( 37 ), ExtResource( 19 ), ExtResource( 39 ), ExtResource( 24 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 36 ), ExtResource( 15 ), ExtResource( 30 ), ExtResource( 41 ), ExtResource( 18 ), ExtResource( 31 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 22 ), ExtResource( 32 ), ExtResource( 23 ), ExtResource( 21 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 27 ), ExtResource( 35 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 10 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 45 ) ],
+"loop": true,
+"name": "idle",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 58 ), ExtResource( 56 ), ExtResource( 62 ), ExtResource( 65 ), ExtResource( 60 ), ExtResource( 54 ), ExtResource( 61 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 63 ), ExtResource( 57 ), ExtResource( 59 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 93 ), ExtResource( 98 ), ExtResource( 100 ), ExtResource( 95 ), ExtResource( 97 ), ExtResource( 96 ), ExtResource( 99 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 94 ), ExtResource( 108 ), ExtResource( 107 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 92 ), ExtResource( 111 ), ExtResource( 114 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 91 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 115 ), ExtResource( 117 ), ExtResource( 123 ), ExtResource( 116 ), ExtResource( 119 ), ExtResource( 122 ), ExtResource( 120 ), ExtResource( 121 ), ExtResource( 118 ) ],
+"loop": false,
+"name": "jumping",
+"speed": 20.0
+} ]
 
 [node name="Player" type="KinematicBody2D" groups=[
 "players",
@@ -205,6 +141,7 @@ cast_to = Vector2( 0, 6 )
 collision_mask = 8
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 2 )
 vframes = 2
 hframes = 16
@@ -223,19 +160,6 @@ process_mode = 0
 wait_time = 0.3
 one_shot = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-playback_speed = 2.6
-anims/crouch = SubResource( 1 )
-anims/falling = SubResource( 2 )
-anims/falling_weapon = SubResource( 3 )
-anims/idle = SubResource( 4 )
-anims/idle_weapon = SubResource( 5 )
-anims/jumping = SubResource( 6 )
-anims/jumping_weapon = SubResource( 7 )
-anims/run = SubResource( 8 )
-anims/run_weapon = SubResource( 9 )
-anims/standing_weapon_ready = SubResource( 10 )
-
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( 0, -14 )
 rotating = true
@@ -244,7 +168,7 @@ process_mode = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -3.67545, 3.67543 )
-shape = SubResource( 11 )
+shape = SubResource( 1 )
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 0, 14 )
@@ -282,3 +206,11 @@ scale = Vector2( 1.49157, 1.46265 )
 normal = ExtResource( 8 )
 action = "shoot"
 visibility_mode = 1
+
+[node name="Animations" type="AnimatedSprite" parent="."]
+position = Vector2( -3.52791, 0.150928 )
+scale = Vector2( 0.0668982, 0.0731983 )
+frames = SubResource( 2 )
+animation = "jumping"
+frame = 34
+playing = true

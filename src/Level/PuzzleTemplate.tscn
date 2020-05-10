@@ -32,10 +32,13 @@ scale = Vector2( 11.24, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 700.112, 976.936 )
+scale = Vector2( 3.36, 3.04 )
 inventory = [  ]
 
 [node name="Player2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 916.356, 855.628 )
+selected = false
+gravity_vector = Vector2( 1, 0 )
 
 [node name="Bird\'s Eye Camera" type="Camera2D" parent="."]
 position = Vector2( 589.103, 513.577 )
