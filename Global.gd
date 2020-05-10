@@ -28,6 +28,11 @@ func _deferred_goto_scene(path):
 func _input(event):
 	if event.is_action_pressed("debug_next_level"):
 		goto_next_level()
+	if event.is_action_pressed("reset"):
+		reset_level()
+		
+func reset_level():
+	Global.goto_scene(levels[progress])
 
 func goto_next_level():
 	progress += 1
