@@ -26,9 +26,7 @@ func on_goal(at_goal, player):
 	else:
 		players_at_goal.erase(player)
 		
-func on_victory():
-	yield(get_tree().create_timer(3.0), "timeout")
-	Global.goto_next_level()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

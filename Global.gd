@@ -8,6 +8,7 @@ var currentScene = null
 func _ready():
 	var root = get_tree().get_root()
 	currentScene = root.get_child(root.get_child_count() - 1)
+	EventBus.connect("victory",self,"on_victory")
 	
 func goto_scene(path):
 	print("Attempting to load scene: " + path)
@@ -31,3 +32,7 @@ func _input(event):
 func goto_next_level():
 	progress += 1
 	Global.goto_scene(levels[progress])
+	
+func on_victory():
+	yield(get_tree().create_timer(3.0), "timeout")
+	goto_next_level()
