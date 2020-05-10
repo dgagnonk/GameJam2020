@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/Level/birds_eye_camera.gd" type="Script" id=1]
+[ext_resource path="res://src/Platforms/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Level/Switch.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Level/Gate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Level/VictoryNotification.tscn" type="PackedScene" id=5]
+[ext_resource path="res://FluidCamera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/InventoryItem.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Actors/Player2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Level/Goal.tscn" type="PackedScene" id=10]
+
+[node name="IntroToGate1" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1065.79, 530.381 )
+rotation = -1.57079
+scale = Vector2( 11.24, 1 )
+
+[node name="Platform2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 543.642, 1059.57 )
+scale = Vector2( 11.24, 1 )
+
+[node name="Platform3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 9.18295, 539.172 )
+rotation = 1.57079
+scale = Vector2( 11.24, 1 )
+
+[node name="Platform4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 531.335, 8.22937 )
+rotation = -3.14159
+scale = Vector2( 11.24, 1 )
+
+[node name="Platform5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 938.424, 901.477 )
+scale = Vector2( 2.52, 1 )
+
+[node name="VictoryNotifier" parent="." instance=ExtResource( 5 )]
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+position = Vector2( 700.112, 976.936 )
+inventory = [  ]
+
+[node name="Player2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 955.219, 417.033 )
+
+[node name="Bird\'s Eye Camera" type="Camera2D" parent="."]
+position = Vector2( 589.103, 513.577 )
+zoom = Vector2( 2, 2 )
+script = ExtResource( 1 )
+
+[node name="Camera Parent" parent="." instance=ExtResource( 6 )]
+
+[node name="Gate" parent="." instance=ExtResource( 4 )]
+position = Vector2( 818.602, 971.855 )
+scale = Vector2( 2.25909, -0.388631 )
+
+[node name="Goal" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1014.1, 1005.86 )
+
+[node name="Switch" parent="." instance=ExtResource( 3 )]
+position = Vector2( 412.266, 1031.74 )
+
+[node name="red_key" parent="." instance=ExtResource( 7 )]
+position = Vector2( 61.1599, 726.416 )
+rotation = 1.5708
+vertical_bounce = false

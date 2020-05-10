@@ -1,6 +1,6 @@
 extends Area2D
 
-var direction = 2
+export(bool) var vertical_bounce = true
 var t = 0
 var upper_pos #upper limit of the "bounce" effect
 var lower_pos #lower limit of the "bounce" effect
@@ -9,7 +9,11 @@ var going_to_pos #current position the item is bouncing to
 func _ready():
 	connect("body_entered", self, "on_body_entered")
 	connect("body_exited", self, "on_body_exited")
-	upper_pos = self.position + Vector2(0, 3)
+	if vertical_bounce:
+		upper_pos = self.position + Vector2(0, 3)
+	else:
+		upper_pos = self.position + Vector2(3, 0)
+		
 	lower_pos = self.position
 	
 func _physics_process(delta):
