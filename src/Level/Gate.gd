@@ -17,20 +17,39 @@ export(bool) var is_interactable = true
 export(String) var interact_action = "open_gate"
 
 func _ready():
-	EventBus.connect("open_gate", self, "on_gate_open")
+	EventBus.connect("toggle_gate_open", self, "on_gate_toggle")
+	EventBus.connect("force_gate_open", self, "on_force_gate_open")
+	EventBus.connect("force_gate_close", self, "on_force_gate_close")
+
+func closeGate():
+	is_closed = true
+	gate_closed.show()
+	gate_open.hide()
+	set_collision_mask_bit(0, true)
+	
+func openGate():
+	is_closed = false
+	gate_closed.hide()
+	gate_open.show()
+	set_collision_mask_bit(0, false)	
 
 func toggleGateOpen():
 	if is_closed:
-		gate_closed.hide()
-		gate_open.show()
+		openGate()
 	else:
-		gate_closed.show()
-		gate_open.hide()
+		closeGate()
 
 	is_closed = !is_closed
-	set_collision_mask_bit(0, is_closed)
 
-func on_gate_open(gate_name):
+func on_force_gate_close(gate_name):
+	closeGate()
+	
+func on_force_gate_open(gate_name):
+	openGate()
+	
+func on_gate_toggle(gate_name):
 	toggleGateOpen()
+	
+
 
 

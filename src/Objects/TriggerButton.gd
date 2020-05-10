@@ -28,7 +28,8 @@ func on_body_entered(body):
 func on_body_exited(body):
 	if body.can_use_buttons:
 		current_collisions.remove(body.name)
+		print(len(current_collisions))
 		if len(current_collisions) == 0:
 			on_sprite.visible = false
 			off_sprite.visible = true			
-			EventBus.emit_signal(trigger_event, trigger_event_data)
+			EventBus.emit_signal("force_gate_close", trigger_event_data)

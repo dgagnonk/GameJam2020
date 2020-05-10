@@ -18,7 +18,6 @@ onready var yVelocity = 1
 onready var xVelocity = 0
 export(bool) var selected = true
 export(Vector2) var gravity_vector = Vector2(0,1)
-onready var switch_nearby = false
 
 onready var nearest_interactable = null
 export(Array) var inventory = []

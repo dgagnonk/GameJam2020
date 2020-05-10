@@ -8,8 +8,9 @@ signal toggle_birds_eye(toggle_on)
 
 onready var players_at_goal = []
 
-signal open_gate(gate_name)
-
+signal toggle_gate_open(gate_name)
+signal force_gate_close(gate_name)
+signal force_gate_open(gate_name)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
