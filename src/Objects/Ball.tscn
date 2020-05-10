@@ -9,12 +9,12 @@ friction = 10.0
 rough = true
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 40.0
+radius = 24.8827
 
 [node name="Ball" type="RigidBody2D" groups=[
 "balls",
 ]]
-collision_layer = 8
+collision_layer = 10
 collision_mask = 9
 mass = 1.65918
 physics_material_override = SubResource( 1 )
@@ -31,8 +31,8 @@ can_use_buttons = true
 shape = SubResource( 2 )
 
 [node name="ball" type="Sprite" parent="."]
-position = Vector2( 0.270203, -0.157578 )
-scale = Vector2( 0.135563, 0.135563 )
+position = Vector2( -0.0217911, -0.157578 )
+scale = Vector2( 0.0824667, 0.0814934 )
 texture = ExtResource( 2 )
 
 [node name="GravityController" parent="." instance=ExtResource( 1 )]

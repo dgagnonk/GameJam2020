@@ -168,7 +168,7 @@ func _input(event):
 					
 					if nearest_interactable.interact_action == "reverse_gravity":
 						interact_action_data = gravity_opposite_orientation()
-					elif nearest_interactable.interact_action == "open_gate":
+					else:
 						interact_action_data = nearest_interactable.name
 					EventBus.emit_signal(nearest_interactable.interact_action, interact_action_data)
 				

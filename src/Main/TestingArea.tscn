@@ -35,7 +35,7 @@ position = Vector2( 459.571, 166.751 )
 scale = Vector2( 0.147376, 0.147376 )
 
 [node name="PuzzleTemplate" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1.85059, -1.85059 )
+position = Vector2( -0.797978, -1.85059 )
 
 [node name="Ball" parent="." instance=ExtResource( 8 )]
 position = Vector2( 603.51, 998.802 )
@@ -52,8 +52,7 @@ trigger_event_data = "red_gate"
 [node name="Box" parent="." instance=ExtResource( 4 )]
 position = Vector2( 310.069, 888.456 )
 
-[node name="Gate" parent="." instance=ExtResource( 9 )]
+[node name="red_gate" parent="." instance=ExtResource( 9 )]
 position = Vector2( 464.267, 990.521 )
-collision_layer = 0
 collision_mask = 1
 interact_action = "toggle_gate_open"

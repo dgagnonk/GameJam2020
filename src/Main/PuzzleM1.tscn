@@ -1,0 +1,140 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/Platforms/Platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Level/PuzzleTemplate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Objects/InventoryItem.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Level/Switch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Objects/BoxWithBalloons.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Objects/Ball.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Level/Goal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Level/Gate.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Objects/TriggerButton.tscn" type="PackedScene" id=9]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="red_key" parent="." instance=ExtResource( 3 )]
+position = Vector2( 211.645, 754.908 )
+
+[node name="Platform5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 705.028, 124.21 )
+rotation = 4.71238
+scale = Vector2( 2.4, 1 )
+
+[node name="PuzzleTemplate" parent="." instance=ExtResource( 2 )]
+
+[node name="Platform" parent="." instance=ExtResource( 1 )]
+position = Vector2( 758.123, 231.812 )
+scale = Vector2( 1.36, 1 )
+
+[node name="Platform2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 810.121, 285.754 )
+rotation = 1.57079
+
+[node name="Platform3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 756.93, 343.989 )
+scale = Vector2( 1.44, 1 )
+
+[node name="Goal" parent="." instance=ExtResource( 7 )]
+position = Vector2( 753.672, 285.345 )
+
+[node name="Goal2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 367.356, 68.5026 )
+rotation = -1.57079
+
+[node name="Platform9" parent="Goal2" instance=ExtResource( 1 )]
+position = Vector2( 14.3521, -172.615 )
+scale = Vector2( 4.38527, 3.22446 )
+
+[node name="Platform8" parent="Goal2" instance=ExtResource( 1 )]
+position = Vector2( 182.018, 1.31952 )
+rotation = 1.57079
+scale = Vector2( 3.22446, 3.22446 )
+
+[node name="Platform7" parent="Goal2" instance=ExtResource( 1 )]
+position = Vector2( 10.5052, 189.097 )
+scale = Vector2( 4.64324, 3.22446 )
+
+[node name="Platform4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 565.527, 122.316 )
+scale = Vector2( 3.2, 1 )
+
+[node name="Platform6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 152.895, 121.263 )
+scale = Vector2( 3.2, 1 )
+
+[node name="Platform7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 701.316, 574.213 )
+rotation = -1.57079
+scale = Vector2( 4.8, 1 )
+
+[node name="Switch" parent="." instance=ExtResource( 4 )]
+position = Vector2( 675, 421.684 )
+rotation = -1.57079
+
+[node name="c_gate" parent="." instance=ExtResource( 8 )]
+position = Vector2( 635.843, 518.163 )
+rotation = 0.0
+
+[node name="Platform8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 574.898, 562.23 )
+rotation = -1.57079
+scale = Vector2( 1.12, 1 )
+
+[node name="Platform9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 514.625, 602.955 )
+
+[node name="Platform10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 514.624, 523.948 )
+
+[node name="Switch2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512.995, 563.044 )
+
+[node name="Gate" parent="." instance=ExtResource( 8 )]
+position = Vector2( 471.456, 560.601 )
+interact_action = "toggle_gate_open"
+
+[node name="Platform11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 419.327, 523.133 )
+
+[node name="Platform12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 376.158, 602.14 )
+scale = Vector2( 1.96, 1 )
+
+[node name="Platform13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 295.685, 681.943 )
+rotation = -1.57079
+scale = Vector2( 1.96, 1 )
+
+[node name="Switch3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 322.895, 686.158 )
+rotation = 1.57079
+
+[node name="Platform14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 206.053, 790.369 )
+scale = Vector2( 2.12, 1 )
+
+[node name="BalloonBoxBody" parent="." instance=ExtResource( 5 )]
+position = Vector2( 66.0528, 843 )
+gravity_vector = Vector2( 1, 0 )
+
+[node name="Switch4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 237.419, 1030.26 )
+
+[node name="a_gate" parent="." instance=ExtResource( 8 )]
+position = Vector2( 375.704, 997.557 )
+is_interactable = false
+
+[node name="TriggerButton" parent="." instance=ExtResource( 9 )]
+position = Vector2( 521.21, 1031.12 )
+scale = Vector2( 0.37212, 0.374142 )
+trigger_event = "toggle_gate_open"
+trigger_event_data = "a_gate"
+
+[node name="Ball" parent="." instance=ExtResource( 6 )]
+position = Vector2( 619.808, 1023.4 )
+
+[node name="TriggerButton2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 391.899, 574.799 )
+scale = Vector2( 0.274268, 0.267732 )
+trigger_event = "toggle_gate_open"
+trigger_event_data = "c_gate"

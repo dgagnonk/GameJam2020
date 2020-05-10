@@ -48,7 +48,8 @@ func on_force_gate_open(gate_name):
 	openGate()
 	
 func on_gate_toggle(gate_name):
-	toggleGateOpen()
+	if gate_name == name:
+		toggleGateOpen()
 	
 
 

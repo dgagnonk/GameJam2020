@@ -8,6 +8,7 @@
 extents = Vector2( 49.5517, 16.1525 )
 
 [node name="TriggerButton" type="Area2D"]
+scale = Vector2( 0.234282, 0.228699 )
 script = ExtResource( 2 )
 
 [node name="off" type="Sprite" parent="."]

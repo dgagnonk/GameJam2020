@@ -12,7 +12,7 @@ extents = Vector2( 33.6945, 17.7873 )
 position = Vector2( -1.19983, 0.432098 )
 rotation = -1.5708
 scale = Vector2( 1.53909, -0.388631 )
-collision_layer = 2
+collision_layer = 0
 collision_mask = 2
 script = ExtResource( 4 )
 

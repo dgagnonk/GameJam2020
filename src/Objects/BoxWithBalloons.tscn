@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/art/balloon.png" type="Texture" id=4]
 
 [sub_resource type="PhysicsMaterial" id=1]
-absorbent = true
+bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 40, 40 )
