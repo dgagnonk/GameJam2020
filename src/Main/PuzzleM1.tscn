@@ -91,7 +91,6 @@ position = Vector2( 512.995, 563.044 )
 
 [node name="Gate" parent="." instance=ExtResource( 8 )]
 position = Vector2( 471.456, 560.601 )
-interact_action = "toggle_gate_open"
 
 [node name="Platform11" parent="." instance=ExtResource( 1 )]
 position = Vector2( 419.327, 523.133 )

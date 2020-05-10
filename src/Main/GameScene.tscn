@@ -13,7 +13,7 @@ font_data = ExtResource( 2 )
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource( 1 )
-levels = [ "res://src/Main/IntroToGates1.tscn", "res://src/Main/DummyLevel1.tscn", "res://src/Main/DummyLevel2.tscn", "res://src/Main/IntroToGates1.tscn", "res://src/Main/DummyLevel1.tscn", "res://src/Main/DummyLevel2.tscn" ]
+levels = [ "res://src/Main/BasicPuzzle.tscn", "res://src/Main/Puzzle2.tscn", "res://src/Main/IntroToGates1.tscn", "res://src/Main/PuzzleM1.tscn", "res://src/Main/You Win.tscn" ]
 progress = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
