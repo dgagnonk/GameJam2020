@@ -15,7 +15,8 @@ signal force_gate_open(gate_name)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	connect("goal",self,"on_goal")
-	
+	connect("victory",self,"on_victory")
+
 func on_goal(at_goal, player):
 	if at_goal:
 		if ! player in players_at_goal:
@@ -24,6 +25,10 @@ func on_goal(at_goal, player):
 				emit_signal("victory")
 	else:
 		players_at_goal.erase(player)
+		
+func on_victory():
+	yield(get_tree().create_timer(3.0), "timeout")
+	Global.goto_next_level()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
