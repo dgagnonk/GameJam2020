@@ -1,50 +1,84 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://src/Level/PuzzleTemplate.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/Objects/InventoryItem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Level/VictoryNotification.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Objects/Box.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Objects/BoxWithBalloons.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Level/Switch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Level/Goal.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/Level/Gate.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/Level/Gate.gd" type="Script" id=10]
+[ext_resource path="res://src/Platforms/Platform.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Main/Camera2D.gd" type="Script" id=9]
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Player" parent="." groups=[
+"players",
+] instance=ExtResource( 2 )]
+position = Vector2( 467.428, 247.292 )
+
+[node name="Platform" parent="." instance=ExtResource( 8 )]
+position = Vector2( 480.22, 349.932 )
+scale = Vector2( 5.64, 1 )
+
+[node name="Platform3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 202.25, 196.508 )
+rotation = -1.5708
+scale = Vector2( 3.05909, -1.54863 )
+
+[node name="Platform4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 729.31, 192.898 )
+rotation = -4.71239
+scale = Vector2( 3.05909, -1.54863 )
+
+[node name="Platform2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 465.78, 43.0825 )
+rotation = -3.14159
+scale = Vector2( 5.64, 1 )
+
 [node name="Box" parent="." instance=ExtResource( 4 )]
-position = Vector2( 383.177, 402.658 )
+position = Vector2( 342.829, 233.685 )
 
 [node name="Switch2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 452.409, 1025.75 )
+position = Vector2( 577.673, 314.256 )
 scale = Vector2( 0.0913514, 0.0913514 )
 
 [node name="Switch" parent="." instance=ExtResource( 6 )]
-position = Vector2( 45.1196, 664.78 )
+position = Vector2( 248.882, 120.3 )
 rotation = 1.57079
 scale = Vector2( 0.100113, 0.100113 )
-collision_layer = 9
-collision_mask = 9
 
 [node name="Box2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 245.956, 319.538 )
+position = Vector2( 388.448, 135.728 )
 
 [node name="BalloonBox" parent="." instance=ExtResource( 5 )]
-position = Vector2( 655.185, 96.5916 )
+position = Vector2( 403.15, 212.177 )
 gravity_vector = Vector2( 1, 0 )
 
 [node name="BalloonBox2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 848.372, 443.104 )
+position = Vector2( 552.288, 258.27 )
 
 [node name="Goal" parent="." instance=ExtResource( 7 )]
-position = Vector2( 459.571, 166.751 )
+position = Vector2( 461.003, 166.751 )
 scale = Vector2( 0.147376, 0.147376 )
 
-[node name="PuzzleTemplate" parent="." instance=ExtResource( 1 )]
+[node name="VictoryNotifier" parent="." instance=ExtResource( 1 )]
 
-[node name="red_gate" parent="." instance=ExtResource( 9 )]
-position = Vector2( 582.06, 1009.6 )
-scale = Vector2( 0.979094, -0.38863 )
-script = ExtResource( 10 )
+[node name="Camera Parent" type="Node2D" parent="."]
+position = Vector2( 517.86, 187.783 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="red_key" parent="." instance=ExtResource( 2 )]
-position = Vector2( 893.329, 1019.71 )
+[node name="Camera2D" type="Camera2D" parent="Camera Parent"]
+anchor_mode = 0
+rotating = true
+current = true
+script = ExtResource( 9 )
+movementSpeed = 10
+
+[node name="Player2" parent="." groups=[
+"players",
+] instance=ExtResource( 2 )]
+position = Vector2( 653.576, 166.036 )
+selected = false
+gravity_vector = Vector2( 1, 0 )
