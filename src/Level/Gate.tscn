@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/art/gate closed.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33.6945, 14.7874 )
+extents = Vector2( 33.6945, 17.7873 )
 
 [node name="Gate" type="KinematicBody2D"]
 position = Vector2( 268.011, 318.33 )
