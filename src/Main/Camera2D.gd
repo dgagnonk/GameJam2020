@@ -62,8 +62,8 @@ func on_toggle_birds_eye(birds_eye_on):
 	
 func _input(event):
 	if event.is_action_released("switch_character"):
-		#startPos = get_parent().global_position
-		#endPos = inactivePlayer.global_position
+		startPos = get_parent().global_position
+		endPos = inactivePlayer.global_position
 		var temp = activePlayer
 		activePlayer = inactivePlayer
 		inactivePlayer = temp
